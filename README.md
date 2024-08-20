@@ -23,7 +23,7 @@ Download bac-tracker.zip from [latest release](https://github.com/p1k0chu/bac-tr
     - Warning: back slashes are funky in strings, either convert all the slashes to forward slashes, or turn back slashes into double back slashes:
         - Acceptable: `.../saves/bac-world/` or `...\\saves\\bac-world\\`
         - Unacceptable: `...\saves\bac-world\`
-    - you should leave "path_to_world" empty, but if you want you can make a separate folder, its just a folder to put all downloaded world files.
+    - dont touch "path_to_world" in this fork and its all good
 12. Running ![YIPPEE](https://cdn.discordapp.com/emojis/1084539417861029938.gif?size=48&quality=lossless)
     - If you want to run it with python interpreter, set your working directory to `tracker` folder, create venv `python -m venv venv`, either run (every time you open new console window) `venv\Scripts\activate.bat` (windows) or `source venv/bin/activate` (linux), and run it with `python src/tracker.py`
     - or run compiled tracker.exe
