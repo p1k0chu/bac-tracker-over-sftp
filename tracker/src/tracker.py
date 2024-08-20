@@ -45,6 +45,8 @@ def main():
         if time_passed / save_rate >= 0:
             logger.info("Checking Advancement file")
             time_passed = 0
+
+            tracker_utils.download_files_from_server(settings, world_dir)
             adv_data, item_data = tracker_utils.check_adv_directory(adv_tracker)
             stats_data = tracker_utils.check_stats(statistics)
             warning, scoreboard_data = tracker_utils.check_scoreboard(scoreboard)

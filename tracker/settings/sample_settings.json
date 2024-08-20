@@ -1,6 +1,7 @@
 {
     "spreadsheet-link": "",
     "path_to_world": "",
+    "path_on_remote": "",
     "URL": "http://127.0.0.1/",
     "API_KEY": "password",
 
@@ -35,5 +36,11 @@
             "status_range": "D2:D",
             "who_range":"C2:C"
         }
+    },
+    "sftp": {
+        "host": "",
+        "username": "",
+        "password": "",
+        "port": 0
     }
 }

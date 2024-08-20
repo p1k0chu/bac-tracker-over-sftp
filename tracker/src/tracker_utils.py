@@ -6,10 +6,55 @@ from overlay import Overlay
 from scoreboard import Scoreboard
 from utils import log_function_call
 import logging
+import paramiko
+import os
 
 logger = logging.getLogger(__name__)
 
+ssh_client = paramiko.SSHClient()
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
+@log_function_call
+def download_files_from_server(settings, world_path):
+    # erase old files
+    for directory_path in ["advancements", "stats", "data"]:
+        directory_path = os.path.join(world_path, directory_path)
+
+        os.makedirs(directory_path, exist_ok=True)
+    
+        files = os.listdir(directory_path)
+        
+        for file in files:
+            file_path = os.path.join(directory_path, file)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+
+    remote_path = settings["path_on_remote"]
+        
+    ssh_client.connect(
+        hostname=settings["sftp"]["host"],
+        port=settings["sftp"]["port"],
+        username=settings["sftp"]["username"],
+        password=settings["sftp"]["password"]
+    )
+    ftp = ssh_client.open_sftp()
+
+    files = ftp.listdir(os.path.join(remote_path, "advancements"))
+
+    for fname in files:
+        if(fname.endswith(".json")):
+            ftp.get(os.path.join(remote_path, "advancements", fname), os.path.join(world_path, "advancements", fname))
+    
+    files = ftp.listdir(os.path.join(remote_path, "stats"))
+    for fname in files:
+        if(fname.endswith(".json")):
+            ftp.get(os.path.join(remote_path, "stats", fname), os.path.join(world_path, "stats", fname))
+
+    ftp.get(os.path.join(remote_path, "data", "scoreboard.dat"), os.path.join(world_path, "data", "scoreboard.dat"))
+
+    # close the connection
+    ftp.close()
+    ssh_client.close()
 
 @log_function_call
 def get_AdvMonitor(settings, adv_path, cwd, required_advs):
