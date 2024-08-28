@@ -2,7 +2,7 @@
 A tracker for Blaze and Caves Minecraft advancement pack. The tracker manages and puts all advancements in a google spreadsheet.
 
 # Installation Instructions
-Download bac-tracker.zip from [latest release](https://github.com/TheTalkingMime/bac-tracker/releases).
+Download bac-tracker.zip from [latest release](https://github.com/p1k0chu/bac-tracker/releases).
 
 1. Unzip `bac-tracker.zip` You should have a data folder, settings folder, and an exe
 2. Get a credentials json by following the instructions [here](https://www.youtube.com/watch?v=KIAo3Lgsk_Q), you only need to watch until 1:40 in the video. The rest of the video is specific to reset-tracker.
