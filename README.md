@@ -6,7 +6,7 @@ A tracker for Blaze and Caves Minecraft advancement pack. The tracker manages an
 2. this might or might not crash a lot ![Susge](https://cdn.discordapp.com/emojis/912653211607924736.webp?size=48&quality=lossless)
 
 # Installation Instructions
-Download bac-tracker.zip from [latest release](https://github.com/p1k0chu/bac-tracker-over-sftp/releases) OR build it yourself OR just download repo and install [python interpreter](https://www.python.org/downloads/)
+Download bac-tracker.zip from [latest release](https://github.com/p1k0chu/bac-tracker/releases) OR build it yourself OR just download repo and install [python interpreter](https://www.python.org/downloads/)
 
 1. Unzip `bac-tracker.zip` You should have a data folder, settings folder, and an exe
 2. Get a credentials json by following the instructions [here](https://www.youtube.com/watch?v=KIAo3Lgsk_Q), you only need to watch until 1:40 in the video. The rest of the video is specific to reset-tracker.
