@@ -1,6 +1,9 @@
 # bac-tracker
 A tracker for Blaze and Caves Minecraft advancement pack. The tracker manages and puts all advancements in a google spreadsheet.
 
+# p1k0chu's fork for modifications
+- check out "sftp" branch for tracker with sftp for your cloud hosted minecraft server
+
 # Installation Instructions
 Download bac-tracker.zip from [latest release](https://github.com/TheTalkingMime/bac-tracker/releases).
 
